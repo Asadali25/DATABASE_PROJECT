@@ -1,9 +1,6 @@
 
 <?php 
 require 'configsql.php';
-
-
-
 ?>
 
 
