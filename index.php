@@ -1,7 +1,3 @@
-<?php
-require 'configsql.php';
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
