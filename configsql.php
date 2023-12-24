@@ -47,12 +47,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
+
+    $uploadDirectory = 'uploads/'; // specify the directory where you want to store uploaded files
+
+// Check if the file was successfully uploaded
+if (move_uploaded_file($_FILES['s_logo']['tmp_name'], $uploadDirectory . $_FILES['s_logo']['name'])) {
+    // File move was successful
+    
+} else {
+    // File move failed
+    echo 'File upload failed.';
+    exit();
+}
+
+
     $societyData = new stdClass();
 
 
     $societyData->name = $_POST['s_societyName'];
     $societyData->description = $_POST['s_description'];
-    $societyData->logo = $_FILES['s_logo']['name']; 
+    $societyData->logoPath = $uploadDirectory . $_FILES['s_logo']['name'];
     $societyData->socialMedia = $_POST['s_socialMedia'];
     $societyData->contactEmail = $_POST['s_contactEmail'];
 
