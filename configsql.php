@@ -44,4 +44,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     exit(); // Ensure that no further code is executed after the redirect
   }
 }
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+    $societyData = new stdClass();
+
+
+    $societyData->name = $_POST['s_societyName'];
+    $societyData->description = $_POST['s_description'];
+    $societyData->logo = $_FILES['s_logo']['name']; 
+    $societyData->socialMedia = $_POST['s_socialMedia'];
+    $societyData->contactEmail = $_POST['s_contactEmail'];
+
+}
+
 ?>
